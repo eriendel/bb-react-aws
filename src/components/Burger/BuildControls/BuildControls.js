@@ -22,7 +22,7 @@ const controls = [
   }
 ];
 
-const BuildControls = ({disabledInfo, ingredientAdded, ingredientRemoved, totalPrice, purchaseable, startPurchasing}) => {
+const BuildControls = ({disabledInfo, ingredientAdded, ingredientRemoved, totalPrice, purchaseable, startPurchasing, isAuth}) => {
   return (
     <div className={classes.BuildControls}>
       <p>Burger Price is: <strong>{totalPrice.toFixed(2)}$</strong></p>
@@ -34,7 +34,7 @@ const BuildControls = ({disabledInfo, ingredientAdded, ingredientRemoved, totalP
       })}
       <button className={classes.OrderButton}
               disabled={!purchaseable}
-              onClick={startPurchasing}>ORDER NOW</button>
+              onClick={startPurchasing}>{isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}</button>
     </div>
   );
 };

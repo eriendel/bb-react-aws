@@ -27,10 +27,9 @@ const WithErrorHandler = (WrappedComponent, axios) => {
       axios.interceptors.response.eject(this.resInterceptor);
     }
 
-
     errorConfirmed = () => {
       this.setState({error: null});
-    }
+    };
 
     render() {
       return (

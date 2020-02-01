@@ -4,7 +4,7 @@ import NavigationItems from "../NavigationItems/NavigationItems";
 import classes from './SideDrawer.css';
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
-const SideDrawer = ({show, closed}) => {
+const SideDrawer = ({show, closed, isAuth}) => {
   return (
     <>
       <Backdrop show={show} click={closed}/>
@@ -13,7 +13,7 @@ const SideDrawer = ({show, closed}) => {
           <Logo/>
         </div>
         <nav>
-          <NavigationItems/>
+          <NavigationItems isAuth={isAuth}/>
         </nav>
       </div>
     </>
